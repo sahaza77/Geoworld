@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# world2025
-=======
 # Geoworld 
 
 ![world](./images/world-logo.png)
@@ -35,4 +32,5 @@ Initié au lycée Léonard de Vinci - 77000 Melun
 ### Point d'entrée
 
 ![copie ecran](./images/projet-attendus.png)
->>>>>>> cb6a994 (update)
+
+jc was here §§§§!!!!!!
