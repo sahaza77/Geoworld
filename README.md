@@ -32,5 +32,3 @@ Initié au lycée Léonard de Vinci - 77000 Melun
 ### Point d'entrée
 
 ![copie ecran](./images/projet-attendus.png)
-
-jc was here §§§§!!!!!!
