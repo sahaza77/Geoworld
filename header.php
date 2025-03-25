@@ -53,7 +53,7 @@ overflow-y: auto;
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index2.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <?php
   require_once 'inc/manager-db.php';
@@ -72,17 +72,17 @@ overflow-y: auto;
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="langues.php">Langues</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link" href="carte.php">Carte du monde</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
              aria-expanded="false">Pays</a>
           <div class="dropdown-menu" aria-labelledby="dropdown02">
           <?php foreach($lesPays as $lesPays) : ?>
-          <a class="dropdown-item" href="index2.php?name=<?= $lesPays->Name ; ?>"><?= $lesPays->Name; ?> </a>
+          <a class="dropdown-item" href="details.php?name=<?= $lesPays->id ; ?>"><?= $lesPays->Name; ?> </a>
           <?php endforeach ; ?>
           </div>
         </li>

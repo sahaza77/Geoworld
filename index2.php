@@ -40,28 +40,31 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 echo "<h1>" . $continent . "</h1>";
 ?>
     <div>
-     <table class="table">
+    <table id="example" class="table table-striped table-bordered table-hover" style="width:100%; border: 2px solid black; border-collapse: collapse;">
+    <thead style="background-color: transparent; color: black;">
          <tr>
-          <th>Drapeau</th>
-           <th>Nom</th>
-           <th>Population</th>
-           <th>Président</th>
-           <th> Surface</th>
-           <th> Capitale</th>
+         <th style="border: 1px solid black; text-align: center;">Drapeau</th>
+         <th style="border: 1px solid black; text-align: center;">Nom</th>
+         <th style="border: 1px solid black; text-align: center;">Population</th>
+         <th style="border: 1px solid black; text-align: center;">Président</th>
+         <th style="border: 1px solid black; text-align: center;"> Surface</th>
+         <th style="border: 1px solid black; text-align: center;"> Capitale</th>
          </tr>
+        </thead>
+        <tbody>
        <?php
        // $desPays est un tableau dont les éléments sont des objets représentant
        // des caractéristiques d'un pays (en relation avec les colonnes de la table Country)
        // Bouche pour afficher tout les pays dans le tableau
        foreach ($desPays as $pays) : ?>
           <tr>
-          <td> <?php $source = "images/flag/".strtolower($pays->Code2).".png" ?>
-             <img src=<?= $source; ?> ></td>
-          <td><a href="index2.php?id=<?php echo $pays->id; ?>"><?php echo $pays->Name; ?></a></td>
-            <td> <?php echo $pays->Population ?></td>
-            <td> <?php echo $pays->HeadOfState ?></td>
-            <td> <?php echo $pays->SurfaceArea ?></td>
-            <td> <?php $capitale = getCapitale($pays->Capital);
+          <td class="text-center" style="border: 1px solid black;"> <?php $source = "images/flag/".strtolower($pays->Code2).".png" ?>
+             <img src=<?= $source; ?> height="45" width="60" ></td>
+          <td class="text-center" style="border: 1px solid black;"><a href="details.php?name=<?php echo $pays->id; ?>"><?php echo $pays->Name; ?></a></td>
+            <td class="text-center" style="border: 1px solid black;"> <?php echo $pays->Population ?></td>
+            <td class="text-center" style="border: 1px solid black;"> <?php echo $pays->HeadOfState ?></td>
+            <td class="text-center" style="border: 1px solid black;"> <?php echo $pays->SurfaceArea ?></td>
+            <td class="text-center" style="border: 1px solid black;"> <?php $capitale = getCapitale($pays->Capital);
             if ($capitale) {
                 echo $capitale->Name; 
             } else {
@@ -70,6 +73,7 @@ echo "<h1>" . $continent . "</h1>";
             ?></td>
           </tr>
         <?php endforeach ; ?>
+          </tbody>
      </table>
     </div>
   </div>

@@ -75,3 +75,18 @@ function getCapitale($idpays)
   $prep->execute();
   return $prep->fetch();
 }
+function getPays($id)
+{
+  global $pdo;
+  $query = 'SELECT * FROM Country WHERE id = :id;';
+  $prep = $pdo->prepare($query);
+  $prep->bindValue(':id', $id, PDO::PARAM_STR);
+  $prep->execute();
+  return $prep->fetch();
+}
+function getLangue()
+{
+    global $pdo;
+    $query = 'SELECT l.Name AS Language, COUNT(DISTINCT cl.idCountry) AS NombreDePays FROM `CountryLanguage` cl JOIN `Language` l ON cl.idLanguage = l.id GROUP BY l.Name ORDER BY NombreDePays DESC;  ';
+    return $pdo->query($query)->fetchAll();
+}
