@@ -90,3 +90,20 @@ function getLangue()
     $query = 'SELECT l.Name AS Language, COUNT(DISTINCT cl.idCountry) AS NombreDePays FROM `CountryLanguage` cl JOIN `Language` l ON cl.idLanguage = l.id GROUP BY l.Name ORDER BY NombreDePays DESC;  ';
     return $pdo->query($query)->fetchAll();
 }
+
+
+function getVilles($idpays)
+{
+  global $pdo;
+  $query = 'SELECT * FROM City WHERE idCountry = :id;';
+  $prep = $pdo->prepare($query);
+  $prep->bindValue(':id', $idpays, PDO::PARAM_STR);
+  $prep->execute();
+  return $prep->fetchAll();
+}
+function getPaysByName($name)
+{
+    global $pdo;
+    $query = "SELECT * FROM Country WHERE Name = '$name';";
+    return $pdo->query($query)->fetch();
+}

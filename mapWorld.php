@@ -1,27 +1,4 @@
-<?php
-/**
- * Home Page
- *
- * PHP version 7
- *
- * @category  Page
- * @package   Application
- * @author    SIO-SLAM <sio@ldv-melun.org>
- * @copyright 2019-2021 SIO-SLAM
- * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
- * @link      https://github.com/sio-melun/geoworld
- */
-
-?>
-<?php  require_once 'header.php'; ?>
-<?php
-require_once 'inc/manager-db.php';
-if (isset($_GET['country']) && !empty($_GET['counrty']) ){
-$id = ($_GET['country']);
-$detailpays = getPays($id);
-}
-?>
-
+<?php require_once 'header.php'; ?>
 
 		
 
@@ -31,6 +8,8 @@ $detailpays = getPays($id);
   
   
       <h1>The World</h1>
+
+
 
 
 <img class="map" src="images/demo_world.png" width="800" height="400" usemap="#world">
@@ -353,3 +332,5 @@ $detailpays = getPays($id);
 require_once 'javascripts.php';
 require_once 'footer.php';
 ?>
+
+

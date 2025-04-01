@@ -56,7 +56,8 @@ $pays = getPays($id);
                   </tr>
                  
                </tbody>
-             </table>                          
+             </table>
+             <a href="villes.php?id=<?php echo $pays->id; ?>" class="btn btn-primary btn-lg" style="width: 1100px; height: 40px;">Voir les Villes</a>
        <?php
        require_once 'javascripts.php';
        require_once 'footer.php';
