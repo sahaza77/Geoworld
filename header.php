@@ -75,7 +75,7 @@ overflow-y: auto;
           <a class="nav-link" href="langues.php">Langues</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="carte.php">Carte du monde</a>
+          <a class="nav-link" href="villesmonde.php">Villes du monde</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"

@@ -107,3 +107,15 @@ function getPaysByName($name)
     $query = "SELECT * FROM Country WHERE Name = '$name';";
     return $pdo->query($query)->fetch();
 }
+function getToutesLesVilles()
+{
+    global $pdo;
+    // Requête SQL pour récupérer toutes les villes, triées par ordre alphabétique
+    $query = 'SELECT City.Name, City.Population, City.District, Country.Name AS CountryName
+              FROM City
+              JOIN Country ON City.idCountry = Country.id
+              ORDER BY City.Name ASC;'; // Tri par nom de ville
+    $prep = $pdo->prepare($query);
+    $prep->execute();
+    return $prep->fetchAll();
+}
